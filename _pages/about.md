@@ -39,9 +39,9 @@ Simret Araya Gebreegziabher, **Yukun Yang**, Elena L. Glassman, Toby Jia-Jun Li
  [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> 
 - Submitted to CHI 25', under review
 </div>
-</div> -->
-Submitted to CHI 25', under review
-<!-- - [Supporting Co-Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories](https://arxiv.org/abs/2409.16561), Simret Araya Gebreegziabher, Yukun Yang, Elena L. Glassman, Toby Jia-Jun Li, **CHI 2025**  -->
+</div>
+
+- [Supporting Co-Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories](https://arxiv.org/abs/2409.16561), Simret Araya Gebreegziabher, Yukun Yang, Elena L. Glassman, Toby Jia-Jun Li, **CHI 2025**  -->
   
 # 🎖 Honors and Awards
 - *2022 / 2023* Second-Class Scholarship for Outstanding Students, Tongji University. 
