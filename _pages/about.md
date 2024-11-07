@@ -29,10 +29,10 @@ Yukun Yang is an undergraduate student in the Software Engineering program at To
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CHI 2025</div><img src='../images/MOCHA_system.pdf' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CHI 2025</div><img src='../images/mocha.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Supporting Co-Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories](../images/MOCHA_system.pdf)
+[Supporting Co-Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories](../images/mocha.png)
 
 Simret Araya Gebreegziabher, **Yukun Yang**, Elena L. Glassman, Toby Jia-Jun Li
 
