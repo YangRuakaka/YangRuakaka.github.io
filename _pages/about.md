@@ -29,19 +29,27 @@ Yukun Yang is an undergraduate student in the Software Engineering program at To
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CHI 2025</div><img src='../images/mocha.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+[//]: # (<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CHI 2025</div><img src='../images/mocha.png' alt="sym" width="100%"></div></div>)
 
-[Supporting Co-Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories](../images/mocha.png)
+[//]: # (<div class='paper-box-text' markdown="1">)
 
-Simret Araya Gebreegziabher, **Yukun Yang**, Elena L. Glassman, Toby Jia-Jun Li
+[//]: # ()
+[//]: # ([Supporting Co-Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories]&#40;../images/mocha.png&#41;)
 
-<!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
-- Submitted to CHI 25', under review
-</div>
-</div>
+[//]: # ()
+[//]: # (Simret Araya Gebreegziabher, **Yukun Yang**, Elena L. Glassman, Toby Jia-Jun Li)
 
-- [Supporting Co-Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories](https://arxiv.org/abs/2409.16561), Simret Araya Gebreegziabher, Yukun Yang, Elena L. Glassman, Toby Jia-Jun Li, **CHI 2025**
+[//]: # ()
+[//]: # (<!-- [**Project**]&#40;https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC&#41; <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->)
+
+[//]: # (- Submitted to CHI 25', under review)
+
+[//]: # (</div>)
+
+[//]: # (</div>)
+
+[//]: # ()
+[//]: # (- [Supporting Co-Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories]&#40;https://arxiv.org/abs/2409.16561&#41;, Simret Araya Gebreegziabher, Yukun Yang, Elena L. Glassman, Toby Jia-Jun Li, **CHI 2025**)
 
 # 🎖 Honors and Awards
 - *2022 / 2023* Second-Class Scholarship for Outstanding Students, Tongji University. 
