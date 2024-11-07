@@ -48,7 +48,7 @@ Simret Araya Gebreegziabher, **Yukun Yang**, Elena L. Glassman, Toby Jia-Jun Li
 
 # 📖 Educations
 - *2022 – present*, Tongji University – School of Computer Science and Technology. 
-  - Bachelor's Degree in Software Engineering, Specialization in Machine Intelligence
+  - Bachelor's Degree in Software Engineering
 
 # 💬 Invited Talks
 <!-- - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
