@@ -40,7 +40,7 @@ Simret Araya Gebreegziabher, **Yukun Yang**, Elena L. Glassman, Toby Jia-Jun Li
 - Submitted to CHI 25', under review
 </div>
 </div> -->
-- Submitted to CHI 25', under review
+Submitted to CHI 25', under review
 <!-- - [Supporting Co-Adaptive Machine Teaching through Human Concept Learning and Cognitive Theories](https://arxiv.org/abs/2409.16561), Simret Araya Gebreegziabher, Yukun Yang, Elena L. Glassman, Toby Jia-Jun Li, **CHI 2025**  -->
   
 # 🎖 Honors and Awards
