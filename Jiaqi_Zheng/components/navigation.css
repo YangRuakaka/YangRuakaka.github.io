@@ -1,0 +1,13 @@
+/* Navigation styles */
+.main-nav { position:relative; }
+.nav-toggle { display:none; background:linear-gradient(90deg,var(--pink),var(--blue)); color:#fff; border:none; padding:.6rem .9rem; font-size:1.1rem; border-radius:var(--radius); cursor:pointer; box-shadow:var(--shadow); }
+#nav-menu { list-style:none; margin:0; padding:0; display:flex; gap:1.2rem; font-weight:600; }
+#nav-menu a { position:relative; padding:.55rem .9rem; border-radius:var(--radius); color:var(--text); transition:var(--transition); }
+#nav-menu a.active, #nav-menu a:hover { background:var(--pink-light); color:var(--blue-deep); }
+#nav-menu a.active:after { content:""; position:absolute; left:50%; bottom:4px; transform:translateX(-50%); width:22px; height:4px; background:linear-gradient(90deg,var(--pink),var(--blue)); border-radius:2px; }
+
+@media (max-width:800px){
+  .nav-toggle { display:inline-block; }
+  #nav-menu { flex-direction:column; position:absolute; right:0; top:120%; background:#fff; padding:1rem 1.2rem; min-width:190px; border-radius:var(--radius); box-shadow:var(--shadow); opacity:0; transform:translateY(-10px); pointer-events:none; }
+  #nav-menu[data-open="true"] { opacity:1; transform:translateY(0); pointer-events:auto; }
+}
