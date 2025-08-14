@@ -43,6 +43,13 @@ section { padding: clamp(2.5rem,5vw,4rem) clamp(1rem,5vw,3rem); }
 .hero-visual { position:relative; display:grid; gap:1.2rem; }
 .placeholder { background:var(--pink-soft); border:2px dashed var(--pink); aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; font-size:.9rem; color:var(--text-light); border-radius:var(--radius); position:relative; overflow:hidden; }
 .placeholder:nth-child(2) { background:linear-gradient(135deg,var(--blue) 0%, var(--pink-light) 100%); border-color:var(--blue-deep); color:#fff; }
+/* Avatar & character images */
+.avatar { width:120px; aspect-ratio:1/1; border-radius:50%; object-fit:cover; display:block; border:4px solid #fff; box-shadow:var(--shadow); margin:0 0 1rem; }
+.hero-visual { justify-items:center; align-content:start; }
+.hero-visual .char { width:140px; aspect-ratio:1/1; border-radius:var(--radius); overflow:hidden; background:#fff; box-shadow:var(--shadow); position:relative; }
+.hero-visual .char.gojo { width:160px; }
+.hero-visual .char img { width:100%; height:100%; object-fit:cover; display:block; }
+.visually-hidden { position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
 
 /* Quick stats */
 .quick-stats h3, .news h3 { font-family:var(--font-serif); font-size:1.8rem; margin:0 0 1rem; position:relative; }
