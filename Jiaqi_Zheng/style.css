@@ -42,6 +42,9 @@ section { padding: clamp(2.5rem,5vw,4rem) clamp(1rem,5vw,3rem); }
 .btn:active { transform:translateY(0); }
 .btn.outline { background:linear-gradient(var(--bg),var(--bg)) padding-box, linear-gradient(90deg,var(--pink),var(--blue)) border-box; border:2px solid transparent; color:var(--text); }
 .btn.outline:hover { color:var(--blue-deep); }
+.btn-simple { display:inline-block; padding:.55rem .95rem; border:1px solid var(--blue-deep); border-radius:8px; background:#fff; color:var(--blue-deep); font-weight:600; font-size:.95rem; line-height:1.1; letter-spacing:.5px; box-shadow:0 2px 4px rgba(0,0,0,.05); transition:var(--transition); }
+.btn-simple:hover,.btn-simple:focus { background:var(--blue-deep); color:#fff; border-color:var(--blue-deep); box-shadow:0 4px 10px -2px rgba(74,163,199,.35); }
+.btn-simple:active { transform:translateY(1px); }
 .note { font-size:.8rem; color:var(--text-light); }
 .hero-visual { position:relative; display:grid; gap:1.2rem; }
 .placeholder { background:var(--pink-soft); border:2px dashed var(--pink); aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; font-size:.9rem; color:var(--text-light); border-radius:var(--radius); position:relative; overflow:hidden; }
