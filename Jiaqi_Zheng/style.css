@@ -134,7 +134,7 @@ section { padding: clamp(2.5rem,5vw,4rem) clamp(1rem,5vw,3rem); }
 
 .pub-thumb-wrap {
   width:100%;
-  aspect-ratio:3/4;                  /* 竖向比例；若想正方形改 1/1 */
+  aspect-ratio:16/9;            /* 改为宽>高的横向比例，原 3/4 */
   border-radius:16px;
   overflow:hidden;
   background:linear-gradient(135deg,var(--pink-light),var(--blue));
@@ -183,7 +183,7 @@ section { padding: clamp(2.5rem,5vw,4rem) clamp(1rem,5vw,3rem); }
     padding:1rem 1rem .9rem;
   }
   .pub-thumb-wrap {
-    aspect-ratio:16/10;   /* 手机更适合横向 */
+    aspect-ratio:16/9;          /* 与桌面统一；若想更扁可改 21/9 */
     border-radius:18px;
   }
   .pub-title { font-size:1rem; }
