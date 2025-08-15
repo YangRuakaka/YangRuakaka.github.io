@@ -190,3 +190,42 @@ section { padding: clamp(2.5rem,5vw,4rem) clamp(1rem,5vw,3rem); }
   .pub-authors { font-size:.78rem; }
   .pub-links { font-size:.68rem; }
 }
+
+/* Research page compact layout */
+.research-page section {
+  padding: clamp(1.4rem,4vw,2.2rem) clamp(1rem,4vw,2rem);
+}
+.research-page h2 {
+  margin:0 0 .8rem;
+  font-size:clamp(1.6rem,4.2vw,2.15rem);
+}
+.research-page p {
+  margin:.4rem 0 .85rem;
+  line-height:1.45;
+  font-size:.95rem;
+}
+.research-overview-figure {
+  margin:1rem auto 1.2rem;
+  max-width:1200px;
+  text-align:center;
+  padding:.4rem;
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 4px 14px -3px rgba(0,0,0,.15);
+}
+.research-overview-img {
+  width:100%;
+  height:auto;
+  max-height:70vh;          /* 不超过视口高度 */
+  object-fit:contain;
+  display:block;
+  border-radius:10px;
+}
+@media (min-width:1200px){
+  .research-overview-img { max-height:65vh; }
+}
+@media (max-width:640px){
+  .research-page section { padding:1.1rem 1rem 1.4rem; }
+  .research-overview-figure { margin:.6rem auto 1rem; }
+  .research-overview-img { max-height:58vh; }
+}
