@@ -106,21 +106,87 @@ section { padding: clamp(2.5rem,5vw,4rem) clamp(1rem,5vw,3rem); }
 }
 
 /* Publications layout */
-.pub-cards { list-style:none; margin:1.2rem 0 2.4rem; padding:0; display:grid; gap:1.1rem; }
-.pub-card { background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:1rem 1rem .85rem; display:grid; grid-template-columns:110px 1fr; gap:1rem; position:relative; overflow:hidden; }
-.pub-card:hover { box-shadow:0 6px 18px -6px rgba(0,0,0,.18),0 3px 8px -2px rgba(0,0,0,.08); }
-.pub-thumb-wrap { width:110px; aspect-ratio:1/1; border-radius:10px; overflow:hidden; background:linear-gradient(135deg,var(--pink-light),var(--blue)); display:flex; align-items:center; justify-content:center; }
-.pub-thumb { width:100%; height:100%; object-fit:cover; display:block; }
-.pub-info { font-size:.85rem; line-height:1.4; }
-.pub-title { font-size:.92rem; margin:.1rem 0 .35rem; font-weight:700; font-family:var(--font-sans); }
-.pub-authors { margin:.15rem 0 .4rem; color:var(--text-light); }
-.pub-links { margin:0; font-size:.75rem; letter-spacing:.5px; }
+.pub-cards {
+  list-style:none;
+  margin:1.8rem 0 2.8rem;
+  padding:0;
+  display:grid;
+  gap:1.4rem;
+}
+
+.pub-card {
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:1.1rem 1.25rem 1rem;
+  display:grid;
+  grid-template-columns:200px 1fr;   /* 放大：原 110px */
+  gap:1.35rem;
+  position:relative;
+  overflow:hidden;
+  transition:box-shadow .35s ease, transform .35s ease;
+}
+
+.pub-card:hover {
+  box-shadow:0 10px 28px -8px rgba(0,0,0,.22),0 4px 10px -3px rgba(0,0,0,.10);
+  transform:translateY(-3px);
+}
+
+.pub-thumb-wrap {
+  width:100%;
+  aspect-ratio:3/4;                  /* 竖向比例；若想正方形改 1/1 */
+  border-radius:16px;
+  overflow:hidden;
+  background:linear-gradient(135deg,var(--pink-light),var(--blue));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.pub-thumb {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .6s ease;
+}
+
+.pub-card:hover .pub-thumb { transform:scale(1.06); }
+
+.pub-info { font-size:.9rem; line-height:1.5; }
+.pub-title { font-size:1.02rem; margin:.15rem 0 .5rem; font-weight:700; }
+.pub-authors { margin:.2rem 0 .55rem; color:var(--text-light); font-size:.8rem; }
+.pub-links { margin:0; font-size:.72rem; letter-spacing:.5px; }
 .pub-links .doi { font-weight:600; }
-.pub-links .doi:after { content:'↗'; font-size:.65rem; margin-left:.25rem; opacity:.7; }
+.pub-links .doi:after { content:'↗'; font-size:.65rem; margin-left:.3rem; opacity:.65; }
+
+/* 中等屏再放大列宽 */
+@media (min-width:900px){
+  .pub-card { grid-template-columns:230px 1fr; }
+}
+
+/* 大屏进一步放大 */
+@media (min-width:1200px){
+  .pub-card { grid-template-columns:260px 1fr; }
+}
+
+/* 超大屏（可选） */
+@media (min-width:1600px){
+  .pub-card { grid-template-columns:300px 1fr; }
+}
+
+/* 窄屏：图片置顶占满宽度，更横向比例 */
 @media (max-width:640px){
-  .pub-card { grid-template-columns:70px 1fr; padding:.9rem .9rem .75rem; }
-  .pub-thumb-wrap { width:70px; }
-  .pub-title { font-size:.9rem; }
-  .pub-authors { font-size:.75rem; }
+  .pub-card {
+    grid-template-columns:1fr;
+    padding:1rem 1rem .9rem;
+  }
+  .pub-thumb-wrap {
+    aspect-ratio:16/10;   /* 手机更适合横向 */
+    border-radius:18px;
+  }
+  .pub-title { font-size:1rem; }
+  .pub-authors { font-size:.78rem; }
   .pub-links { font-size:.68rem; }
 }
