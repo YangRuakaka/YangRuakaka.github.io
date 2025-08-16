@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yukun Yang | Human-AI Interaction Research</title>
+  <meta name="description" content="Yukun Yang - Actively seeking a PhD position in HCI / Human-AI Interaction. Research interests: human-centered AI, adaptive interfaces, creativity support, water polo inspired teamwork." />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body>
+  <!-- Layered animated wave canvas background -->
+  <div id="bg">
+    <canvas id="waves" aria-hidden="true"></canvas>
+    <div id="bg-overlay"></div>
+  </div>
+
+  <header class="site-header" data-animate>
+    <div class="logo" data-hover-magnet>
+      <span class="mark">∿</span>
+      <span class="name">Yukun <em>Yang</em></span>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation"><span></span></button>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#cv" class="btn-pill">CV</a></li>
+      </ul>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button data-lang="zh" class="active">中</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-inner" data-animate>
+        <h1 id="hero-title"><span class="hi">Hi, I'm</span><span class="display">Yukun <span class="wave-accent" aria-hidden="true">∿</span> Yang</span></h1>
+        <p class="tagline" data-i18n="tagline">Actively seeking a PhD position in <strong>HCI / Human–AI Interaction</strong>.</p>
+        <p class="sub" data-i18n="sub">I design & study adaptive, fluid, and trustworthy human-AI collaboration – inspired by the dynamics of water polo teamwork.</p>
+        <div class="hero-actions">
+          <a href="#research" class="btn primary" data-i18n="seeResearch">Explore Research</a>
+          <a href="#contact" class="btn ghost" data-i18n="contactMe">Contact Me</a>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <section id="about" class="panel" data-animate>
+      <div class="section-head">
+        <h2>About / 关于</h2>
+      </div>
+      <div class="split">
+        <div>
+          <p data-i18n="about1">I'm a researcher focusing on how humans and AI systems co-adapt in complex, creative, or high-pressure environments. I strive to build interfaces that feel like water: responsive, supportive, and transparent.</p>
+          <p data-i18n="about2">Currently seeking a PhD opportunity where I can merge empirical user studies, prototyping, and computational modeling to advance human-AI collaboration.</p>
+        </div>
+        <aside class="info-cards">
+          <div class="card" data-tilt>
+            <h3>Interests</h3>
+            <ul class="tags">
+              <li>Human-AI Interaction</li>
+              <li>Adaptive UX</li>
+              <li>Trust & Transparency</li>
+              <li>Creativity Support</li>
+              <li>Data Visualization</li>
+            </ul>
+          </div>
+          <div class="card" data-tilt>
+            <h3>Water Polo</h3>
+            <p>Team coordination, situational awareness, and fluid tactics inform my research metaphors.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="research" class="panel" data-animate>
+      <div class="section-head">
+        <h2>Research Focus / 研究方向</h2>
+      </div>
+      <div class="cards-grid">
+        <article class="research-card" data-tilt>
+          <h3>Collaborative Adaptation</h3>
+          <p>How humans form mental models of AI teammates and negotiate control dynamically.</p>
+        </article>
+        <article class="research-card" data-tilt>
+          <h3>Explainability as Interaction</h3>
+          <p>Designing explanations that are incremental, queryable, and situated within workflow.</p>
+        </article>
+        <article class="research-card" data-tilt>
+          <h3>Fluid Interface Metaphors</h3>
+          <p>Applying hydrodynamic metaphors to craft continuous transitions & state awareness.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="panel" data-animate>
+      <div class="section-head">
+        <h2>Selected Projects / 项目</h2>
+      </div>
+      <div class="cards-grid project-list">
+        <article class="project-card" data-ripple>
+          <header>
+            <h3>Adaptive Collaboration Dashboard</h3>
+          </header>
+            <p>Prototype that visualizes shifting initiative balance between human & AI agents.</p>
+            <ul class="tags small"><li>TypeScript</li><li>D3</li><li>UX Study</li></ul>
+        </article>
+        <article class="project-card" data-ripple>
+          <header>
+            <h3>Explainability Query Lens</h3>
+          </header>
+          <p>Contextual overlay enabling layered, on-demand model rationale exploration.</p>
+          <ul class="tags small"><li>React</li><li>LLM</li><li>HCI</li></ul>
+        </article>
+        <article class="project-card" data-ripple>
+          <header>
+            <h3>Fluid State Transitions Toolkit</h3>
+          </header>
+          <p>Microinteraction primitives inspired by water dynamics for interface prototypes.</p>
+          <ul class="tags small"><li>WebGL</li><li>Motion</li><li>Design System</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications" class="panel" data-animate>
+      <div class="section-head">
+        <h2>Publications / 出版</h2>
+      </div>
+      <ul class="pub-list">
+        <li class="placeholder">(Coming soon / 即将更新)</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="panel" data-animate>
+      <div class="section-head">
+        <h2>Contact / 联系</h2>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <p data-i18n="contact1">I'm actively looking for a PhD advisor / lab in HCI or Human-AI Interaction. If my focus resonates, I'd love to connect.</p>
+          <ul class="contact-channels">
+            <li><a href="mailto:your_email@example.com" class="btn-link">Email</a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="btn-link">LinkedIn</a></li>
+            <li><a href="https://scholar.google.com" target="_blank" rel="noopener" class="btn-link">Google Scholar</a></li>
+            <li><a href="#" class="btn-link">CV (PDF)</a></li>
+          </ul>
+        </div>
+        <form class="mini-form" data-netlify="true" name="contact" method="POST" netlify-honeypot="bot-field" hidden>
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+          <label> Name <input required name="name" autocomplete="name" /></label>
+          <label> Email <input required type="email" name="email" autocomplete="email" /></label>
+          <label> Message <textarea required name="message" rows="4"></textarea></label>
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-animate>
+    <p>&copy; <span id="year"></span> Yukun Yang. Crafted with fluid motion. Built on GitHub Pages.</p>
+  </footer>
+
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <script src="assets/js/waves.js" type="module"></script>
+  <script src="assets/js/main.js" type="module"></script>
+</body>
+</html>
