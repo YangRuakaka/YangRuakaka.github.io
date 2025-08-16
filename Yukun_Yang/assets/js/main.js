@@ -162,6 +162,20 @@ document.head.appendChild(style);
 // --- Advanced Water Cursor & Effects ---
 const body = document.body;
 body.classList.add('enhanced');
+// Detect low performance environment (heuristic: mobile width or low FPS test)
+let lowPerf = false;
+if (window.innerWidth < 640) lowPerf = true;
+// Simple FPS sampler
+let frames = 0, startTime = performance.now();
+function fpsCheck(ts){
+  frames++;
+  if (ts - startTime > 1200){
+    const fps = frames / ((ts - startTime)/1000);
+    if (fps < 42) lowPerf = true;
+  } else requestAnimationFrame(fpsCheck);
+}
+requestAnimationFrame(fpsCheck);
+if (lowPerf) body.classList.add('low-perf');
 const cursorRoot = document.getElementById('custom-cursor');
 const core = cursorRoot?.querySelector('.cursor-core');
 const ring = cursorRoot?.querySelector('.cursor-ring');
@@ -180,13 +194,20 @@ function cursorLoop(){
 }
 if (cursorRoot) cursorLoop();
 
+let lastTrail = 0;
 window.addEventListener('pointermove', e=>{
   cx = e.clientX; cy = e.clientY;
-  spawnTrail(cx, cy);
+  const now = performance.now();
+  if (!lowPerf && now - lastTrail > 40){
+    spawnTrail(cx, cy);
+    lastTrail = now;
+  }
 });
 window.addEventListener('pointerdown', e=>{
-  spawnRipple(e.clientX, e.clientY);
+  body.dataset.cursor='down';
+  if (!lowPerf) spawnRipple(e.clientX, e.clientY);
 });
+window.addEventListener('pointerup', ()=>{ delete body.dataset.cursor; });
 
 function spawnTrail(x,y){
   if (!cursorRoot) return;
@@ -207,7 +228,7 @@ function spawnRipple(x,y){
 }
 
 // Floating bubbles background (lightweight)
-const bubbleCap = 18;
+const bubbleCap = lowPerf ? 6 : 14;
 let bubbleCount = 0;
 function spawnBubble(){
   if (bubbleCount >= bubbleCap) return; bubbleCount++;
@@ -238,6 +259,6 @@ window.addEventListener('scroll', ()=>{
 // Hover scale enhancement for interactive elements
 const interactive = document.querySelectorAll('a.btn, .project-card, .research-card, .card');
 interactive.forEach(el=>{
-  el.addEventListener('pointerenter', ()=>document.body.dataset.cursor='active');
-  el.addEventListener('pointerleave', ()=>delete document.body.dataset.cursor);
+  el.addEventListener('pointerenter', ()=>!lowPerf && (document.body.dataset.cursor='hover'));
+  el.addEventListener('pointerleave', ()=>{ if (document.body.dataset.cursor==='hover') delete document.body.dataset.cursor; });
 });
