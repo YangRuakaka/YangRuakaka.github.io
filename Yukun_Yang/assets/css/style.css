@@ -21,7 +21,7 @@ body {
   margin:0; font-family:var(--font-sans); color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased; overflow-x:hidden;
 }
 
-body.enhanced { cursor:none; }
+/* removed enhanced cursor override */
 
 .no-js [data-animate] { opacity:1; transform:none; }
 
@@ -67,7 +67,7 @@ main { width:100%; }
 .btn:hover, .btn:focus, .btn-pill:hover { transform:translateY(-3px); box-shadow:0 10px 28px -6px rgba(0,180,255,0.4); }
 .btn:active { transform:translateY(1px); }
 
-.scroll-indicator { position:absolute; bottom:40px; left:50%; transform:translateX(-50%); width:26px; height:46px; border:2px solid rgba(255,255,255,0.4); border-radius:18px; display:flex; justify-content:center; align-items:flex-start; padding-top:6px; }
+.scroll-indicator { position:fixed; bottom:40px; left:50%; transform:translateX(-50%) translateZ(0); width:26px; height:46px; border:2px solid rgba(255,255,255,0.4); border-radius:18px; display:flex; justify-content:center; align-items:flex-start; padding-top:6px; pointer-events:none; will-change:transform; }
 .scroll-indicator span { width:6px; height:6px; background:var(--gradient-accent); border-radius:50%; animation:scrollDot 2.4s ease-in-out infinite; }
 
 /* Avatar */
