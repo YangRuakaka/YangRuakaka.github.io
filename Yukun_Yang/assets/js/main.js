@@ -97,8 +97,8 @@ const i18nMap = {
   about1: { en: "I'm a researcher focusing on how humans and AI systems co-adapt in complex, creative, or high-pressure environments. I strive to build interfaces that feel like water: responsive, supportive, and transparent.", zh: '我关注人在复杂、创意或高压情境下与 AI 系统的协同共适应，希望界面像水一样：灵活、支持、透明。' },
   about2: { en: 'Currently seeking a PhD opportunity where I can merge empirical user studies, prototyping, and computational modeling to advance human-AI collaboration.', zh: '目前寻求博士机会，将用户研究、原型设计与计算建模结合，推进 Human-AI 协作。' },
   contact1: { en: "I'm actively looking for a PhD advisor / lab in HCI or Human-AI Interaction. If my focus resonates, I'd love to connect.", zh: '正在寻找 HCI 或 Human-AI Interaction 相关博士导师/团队，如果研究方向契合欢迎联系。' },
-  avatarCaption: { en: 'Portrait of Yukun Yang', zh: '杨昱鲲的头像' },
-  name: { en: 'Yukun Yang', zh: '杨昱鲲' }
+  avatarCaption: { en: 'Portrait of Yukun Yang', zh: '杨宇琨的头像' },
+  name: { en: 'Yukun Yang', zh: '杨宇琨' }
 };
 let currentLang = 'en';
 
@@ -158,3 +158,86 @@ window.addEventListener('keydown', handleFocusVisible);
 const style = document.createElement('style');
 style.innerHTML = `.ripple{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,0.6),rgba(59,181,255,0.05) 60%,transparent 70%);transform:scale(.2);opacity:.65;animation:ripple .9s ease-out forwards;mix-blend-mode:screen;}@keyframes ripple{to{transform:scale(1);opacity:0}}`;
 document.head.appendChild(style);
+
+// --- Advanced Water Cursor & Effects ---
+const body = document.body;
+body.classList.add('enhanced');
+const cursorRoot = document.getElementById('custom-cursor');
+const core = cursorRoot?.querySelector('.cursor-core');
+const ring = cursorRoot?.querySelector('.cursor-ring');
+let cx=0, cy=0, tx=0, ty=0;
+let ringX=0, ringY=0;
+const smoothing = 0.18; // ring follow
+const coreSmooth = 0.32; // core smoothing
+function cursorLoop(){
+  tx += (cx - tx) * coreSmooth;
+  ty += (cy - ty) * coreSmooth;
+  ringX += (cx - ringX) * smoothing;
+  ringY += (cy - ringY) * smoothing;
+  if (core) core.style.transform = `translate(${tx}px,${ty}px)`;
+  if (ring) ring.style.transform = `translate(${ringX}px,${ringY}px)`;
+  requestAnimationFrame(cursorLoop);
+}
+if (cursorRoot) cursorLoop();
+
+window.addEventListener('pointermove', e=>{
+  cx = e.clientX; cy = e.clientY;
+  spawnTrail(cx, cy);
+});
+window.addEventListener('pointerdown', e=>{
+  spawnRipple(e.clientX, e.clientY);
+});
+
+function spawnTrail(x,y){
+  if (!cursorRoot) return;
+  const dot = document.createElement('div');
+  dot.className='cursor-trail';
+  dot.style.left = x+'px';
+  dot.style.top = y+'px';
+  document.body.appendChild(dot);
+  setTimeout(()=>dot.remove(), 900);
+}
+function spawnRipple(x,y){
+  const rp = document.createElement('div');
+  rp.className='cursor-ripple';
+  rp.style.left = x+'px';
+  rp.style.top = y+'px';
+  document.body.appendChild(rp);
+  setTimeout(()=>rp.remove(), 850);
+}
+
+// Floating bubbles background (lightweight)
+const bubbleCap = 18;
+let bubbleCount = 0;
+function spawnBubble(){
+  if (bubbleCount >= bubbleCap) return; bubbleCount++;
+  const b = document.createElement('div');
+  b.className='bubble';
+  const size = (Math.random()*60 + 26);
+  b.style.width = b.style.height = size+'px';
+  b.style.left = (Math.random()*100)+'%';
+  b.style.bottom = '-'+(Math.random()*120 + 40)+'px';
+  const dur = Math.random()*40 + 45; // seconds
+  b.style.animationDuration = dur+'s';
+  b.style.animationDelay = (Math.random()*-dur)+'s';
+  document.body.appendChild(b);
+  setTimeout(()=>{ b.remove(); bubbleCount--; spawnBubble(); }, dur*1000);
+}
+for (let i=0;i<bubbleCap;i++) setTimeout(spawnBubble, i*800 + Math.random()*1400);
+
+// Scroll parallax subtle effect for hero + avatar
+const parallaxTargets = [ ...document.querySelectorAll('.hero-inner, .hero-avatar') ];
+window.addEventListener('scroll', ()=>{
+  const y = window.scrollY;
+  parallaxTargets.forEach(el=>{
+    const speed = el.classList.contains('hero-avatar') ? 0.18 : 0.1;
+    el.style.transform = `translateY(${y*speed}px)`;
+  });
+},{ passive:true });
+
+// Hover scale enhancement for interactive elements
+const interactive = document.querySelectorAll('a.btn, .project-card, .research-card, .card');
+interactive.forEach(el=>{
+  el.addEventListener('pointerenter', ()=>document.body.dataset.cursor='active');
+  el.addEventListener('pointerleave', ()=>delete document.body.dataset.cursor);
+});
