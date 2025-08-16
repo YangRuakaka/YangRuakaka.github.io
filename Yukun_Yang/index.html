@@ -31,7 +31,6 @@
         <li><a href="#research">Research</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#publications">Publications</a></li>
-        <li><a href="#contact">Contact</a></li>
         <li><a href="#cv" class="btn-pill">CV</a></li>
       </ul>
     </nav>
@@ -50,7 +49,6 @@
           <p class="sub" data-i18n="sub">I design & study adaptive, fluid, and trustworthy human-AI collaboration – inspired by the dynamics of water polo teamwork.</p>
           <div class="hero-actions">
             <a href="#research" class="btn primary" data-i18n="seeResearch">Explore Research</a>
-            <a href="#contact" class="btn ghost" data-i18n="contactMe">Contact Me</a>
           </div>
           <div class="scroll-indicator" aria-hidden="true"><span></span></div>
         </div>
@@ -109,6 +107,41 @@
         </article>
       </div>
     </section>
+    <section id="publications" class="panel" data-animate>
+      <div class="section-head">
+        <h2>Publications / 出版</h2>
+      </div>
+      <div class="pub-gallery">
+        <article class="pub-card" data-tilt>
+          <div class="meta">
+            <h3>Human-AI Initiative Shifts in High-Pressure Team Tasks</h3>
+            <p>Study exploring dynamic control negotiation patterns between human experts and adaptive AI copilots in fast-paced analytical scenarios.</p>
+            <ul class="tags small">
+              <li>Human-AI Collaboration</li>
+              <li>Adaptive Interfaces</li>
+              <li>User Study</li>
+            </ul>
+          </div>
+          <figure class="figure">
+            <img src="assets/img/proj-adaptive.png" alt="Graph showing initiative balance oscillations" loading="lazy" />
+          </figure>
+        </article>
+        <article class="pub-card" data-tilt>
+          <div class="meta">
+            <h3>Layered Explainability as an Interactive Query Process</h3>
+            <p>Framework proposing multi-stage, user-driven explanation requests that adapt granularity to evolving mental models.</p>
+            <ul class="tags small">
+              <li>Explainability</li>
+              <li>Interaction Design</li>
+              <li>HCI</li>
+            </ul>
+          </div>
+          <figure class="figure">
+            <img src="assets/img/proj-lens.png" alt="Lens interface diagram with concentric layers" loading="lazy" />
+          </figure>
+        </article>
+      </div>
+    </section>
 
     <section id="projects" class="panel" data-animate>
       <div class="section-head">
@@ -116,62 +149,26 @@
       </div>
       <div class="cards-grid project-list">
         <article class="project-card" data-ripple>
-          <header>
-            <h3>Adaptive Collaboration Dashboard</h3>
-          </header>
-            <p>Prototype that visualizes shifting initiative balance between human & AI agents.</p>
-            <ul class="tags small"><li>TypeScript</li><li>D3</li><li>UX Study</li></ul>
+          <div class="media"><img src="assets/img/proj-adaptive.png" alt="Adaptive collaboration dashboard visualization" loading="lazy" /></div>
+          <header><h3>Adaptive Collaboration Dashboard</h3></header>
+          <p>Prototype that visualizes shifting initiative balance between human & AI agents.</p>
+          <ul class="tags small"><li>TypeScript</li><li>D3</li><li>UX Study</li></ul>
         </article>
         <article class="project-card" data-ripple>
-          <header>
-            <h3>Explainability Query Lens</h3>
-          </header>
+          <div class="media"><img src="assets/img/proj-lens.png" alt="Explainability query lens graphic" loading="lazy" /></div>
+          <header><h3>Explainability Query Lens</h3></header>
           <p>Contextual overlay enabling layered, on-demand model rationale exploration.</p>
           <ul class="tags small"><li>React</li><li>LLM</li><li>HCI</li></ul>
         </article>
         <article class="project-card" data-ripple>
-          <header>
-            <h3>Fluid State Transitions Toolkit</h3>
-          </header>
+          <div class="media"><img src="assets/img/proj-fluid.png" alt="Fluid state transitions toolkit graphic" loading="lazy" /></div>
+          <header><h3>Fluid State Transitions Toolkit</h3></header>
           <p>Microinteraction primitives inspired by water dynamics for interface prototypes.</p>
           <ul class="tags small"><li>WebGL</li><li>Motion</li><li>Design System</li></ul>
         </article>
       </div>
     </section>
 
-    <section id="publications" class="panel" data-animate>
-      <div class="section-head">
-        <h2>Publications / 出版</h2>
-      </div>
-      <ul class="pub-list">
-        <li class="placeholder">(Coming soon / 即将更新)</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="panel" data-animate>
-      <div class="section-head">
-        <h2>Contact / 联系</h2>
-      </div>
-      <div class="contact-grid">
-        <div>
-          <p data-i18n="contact1">I'm actively looking for a PhD advisor / lab in HCI or Human-AI Interaction. If my focus resonates, I'd love to connect.</p>
-          <ul class="contact-channels">
-            <li><a href="mailto:your_email@example.com" class="btn-link">Email</a></li>
-            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="btn-link">LinkedIn</a></li>
-            <li><a href="https://scholar.google.com" target="_blank" rel="noopener" class="btn-link">Google Scholar</a></li>
-            <li><a href="#" class="btn-link">CV (PDF)</a></li>
-          </ul>
-        </div>
-        <form class="mini-form" data-netlify="true" name="contact" method="POST" netlify-honeypot="bot-field" hidden>
-          <input type="hidden" name="form-name" value="contact" />
-          <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
-          <label> Name <input required name="name" autocomplete="name" /></label>
-          <label> Email <input required type="email" name="email" autocomplete="email" /></label>
-          <label> Message <textarea required name="message" rows="4"></textarea></label>
-          <button class="btn primary" type="submit">Send</button>
-        </form>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer" data-animate>
