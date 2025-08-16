@@ -85,39 +85,60 @@ rippleCards.forEach(card=>{
   });
 });
 
-// Language toggle (simple placeholder logic)
+// Language toggle (enhanced i18n)
 const langButtons = document.querySelectorAll('.lang-switch button');
+// Key = token, values = { en, zh }
 const i18nMap = {
-  zh: {
-    tagline: '正在积极寻找 HCI / 人机智能交互 方向的博士机会',
-    sub: '我研究人与AI的协同与自适应界面，以水球团队的动态协作为灵感。',
-    seeResearch: '研究方向',
-    contactMe: '联系我',
-    about1: '我关注人在复杂、创意或高压情境下与AI系统的协同与共适应，希望界面像水一样：灵活、支持且透明。',
-    about2: '目前正在寻找博士机会，结合用户研究、原型设计与计算建模推进 Human-AI 协作。',
-    contact1: '我正在寻找 HCI 或 Human-AI Interaction 相关博士导师 / 团队，如果有共鸣欢迎联系。'
-  }
+  hi: { en: "Hi, I'm", zh: '你好，我是' },
+  tagline: { en: 'Actively seeking a PhD position in <strong>HCI / Human–AI Interaction</strong>.', zh: '正在积极寻找 <strong>HCI / 人机智能交互</strong> 方向博士机会。' },
+  sub: { en: 'I design & study adaptive, fluid, and trustworthy human-AI collaboration – inspired by the dynamics of water polo teamwork.', zh: '我研究与设计自适应、流动且可信的人与AI协作界面，灵感来自水球团队的动态配合。' },
+  seeResearch: { en: 'Explore Research', zh: '研究方向' },
+  contactMe: { en: 'Contact Me', zh: '联系我' },
+  about1: { en: "I'm a researcher focusing on how humans and AI systems co-adapt in complex, creative, or high-pressure environments. I strive to build interfaces that feel like water: responsive, supportive, and transparent.", zh: '我关注人在复杂、创意或高压情境下与 AI 系统的协同共适应，希望界面像水一样：灵活、支持、透明。' },
+  about2: { en: 'Currently seeking a PhD opportunity where I can merge empirical user studies, prototyping, and computational modeling to advance human-AI collaboration.', zh: '目前寻求博士机会，将用户研究、原型设计与计算建模结合，推进 Human-AI 协作。' },
+  contact1: { en: "I'm actively looking for a PhD advisor / lab in HCI or Human-AI Interaction. If my focus resonates, I'd love to connect.", zh: '正在寻找 HCI 或 Human-AI Interaction 相关博士导师/团队，如果研究方向契合欢迎联系。' },
+  avatarCaption: { en: 'Portrait of Yukun Yang', zh: '杨昱鲲的头像' },
+  name: { en: 'Yukun Yang', zh: '杨昱鲲' }
 };
-langButtons.forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    langButtons.forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
+let currentLang = 'en';
+
+langButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
     const lang = btn.dataset.lang;
-    if (lang==='zh') applyLang(lang); else applyLang('en');
+    if (lang === currentLang) return;
+    currentLang = lang;
+    langButtons.forEach(b => b.classList.toggle('active', b === btn));
+    applyLang();
   });
 });
-function applyLang(l){
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
+
+function applyLang(){
+  document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    if (l==='en') {
-      // Fallback to original HTML (English already there)
-      return;
-    }
-    if (i18nMap[l] && i18nMap[l][key]) {
-      el.innerHTML = i18nMap[l][key];
+    const pack = i18nMap[key];
+    if (pack && pack[currentLang]) {
+      el.innerHTML = pack[currentLang];
     }
   });
+  // Special: name inside display (avoid overwriting wave accent)
+  const display = document.querySelector('[data-i18n-display="name"]');
+  if (display && i18nMap.name) {
+    if (currentLang === 'zh') {
+      display.innerHTML = `${i18nMap.name.zh} <span class="wave-accent" aria-hidden="true">∿</span>`;
+    } else {
+      display.innerHTML = `${i18nMap.name.en.split(' ')[0]} <span class="wave-accent" aria-hidden="true">∿</span> ${i18nMap.name.en.split(' ')[1]}`;
+    }
+  }
 }
+
+// Optional: remember language (localStorage)
+try {
+  const saved = localStorage.getItem('lang');
+  if (saved && ['en','zh'].includes(saved)) { currentLang = saved; }
+} catch {}
+applyLang();
+langButtons.forEach(b=> b.classList.toggle('active', b.dataset.lang===currentLang));
+langButtons.forEach(b=> b.addEventListener('click', ()=>{ try { localStorage.setItem('lang', currentLang); } catch {} }));
 
 // Accessibility: trap focus when nav open (mobile)
 document.addEventListener('keydown', e=>{

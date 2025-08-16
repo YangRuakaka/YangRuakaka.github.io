@@ -43,15 +43,22 @@
 
   <main id="main" tabindex="-1">
     <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="hero-inner" data-animate>
-        <h1 id="hero-title"><span class="hi">Hi, I'm</span><span class="display">Yukun <span class="wave-accent" aria-hidden="true">∿</span> Yang</span></h1>
-        <p class="tagline" data-i18n="tagline">Actively seeking a PhD position in <strong>HCI / Human–AI Interaction</strong>.</p>
-        <p class="sub" data-i18n="sub">I design & study adaptive, fluid, and trustworthy human-AI collaboration – inspired by the dynamics of water polo teamwork.</p>
-        <div class="hero-actions">
-          <a href="#research" class="btn primary" data-i18n="seeResearch">Explore Research</a>
-          <a href="#contact" class="btn ghost" data-i18n="contactMe">Contact Me</a>
+      <div class="hero-grid">
+        <div class="hero-inner" data-animate>
+          <h1 id="hero-title"><span class="hi" data-i18n="hi">Hi, I'm</span><span class="display" data-i18n-display="name">Yukun <span class="wave-accent" aria-hidden="true">∿</span> Yang</span></h1>
+          <p class="tagline" data-i18n="tagline">Actively seeking a PhD position in <strong>HCI / Human–AI Interaction</strong>.</p>
+          <p class="sub" data-i18n="sub">I design & study adaptive, fluid, and trustworthy human-AI collaboration – inspired by the dynamics of water polo teamwork.</p>
+          <div class="hero-actions">
+            <a href="#research" class="btn primary" data-i18n="seeResearch">Explore Research</a>
+            <a href="#contact" class="btn ghost" data-i18n="contactMe">Contact Me</a>
+          </div>
+          <div class="scroll-indicator" aria-hidden="true"><span></span></div>
         </div>
-        <div class="scroll-indicator" aria-hidden="true"><span></span></div>
+        <figure class="hero-avatar" data-animate>
+          <div class="avatar-glow"></div>
+          <img src="assets/img/avatar.jpg" alt="Portrait of Yukun Yang" loading="lazy" />
+          <figcaption class="visually-hidden" data-i18n="avatarCaption">Portrait of Yukun Yang</figcaption>
+        </figure>
       </div>
     </section>
 

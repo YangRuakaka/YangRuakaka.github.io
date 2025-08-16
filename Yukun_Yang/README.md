@@ -23,6 +23,7 @@ This is an initial template for Yukun Yang's personal academic / PhD application
 - Replace projects in `#projects`.
 - Add a PDF CV and link it (e.g., `/assets/cv/YukunYang_CV.pdf`).
 - Extend `i18nMap` in `assets/js/main.js` for more translated strings.
+- Replace `assets/img/avatar.jpg` with your portrait (recommended square ~800x800, compressed <150KB). Keep same filename for simplicity.
 
 ## Performance Notes
 - Background waves are lightweight (4 layers, ~ few hundred path points each frame). Adjust in `layers` array in `waves.js`.
