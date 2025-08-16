@@ -138,22 +138,6 @@ main { width:100%; }
 @keyframes float { 0%,100% { transform:translateY(0) rotate(0deg); } 50% { transform:translateY(-10px) rotate(6deg); } }
 @keyframes scrollDot { 0% { transform:translateY(0); opacity:1; } 60% { transform:translateY(20px); opacity:0; } 100% { transform:translateY(0); opacity:0; } }
 
-/* Custom Water Polo Ball Cursor */
-#custom-cursor { position:fixed; top:0; left:0; width:0; height:0; pointer-events:none; z-index:400; mix-blend-mode:plus-lighter; }
-#custom-cursor .cursor-core { width:40px; height:40px; margin:-20px 0 0 -20px; border-radius:50%; position:absolute; background:radial-gradient(circle at 32% 28%,#ffe883,#ffc400 45%,#ffb300 70%,#ff9800 82%,#ff8f00 100%); box-shadow:0 0 0 2px rgba(255,255,255,0.45) inset,0 4px 14px -2px rgba(0,0,0,0.45),0 0 22px -2px rgba(255,200,0,0.6); filter:saturate(1.05); animation:cursorBreath 5.2s ease-in-out infinite; }
-#custom-cursor .cursor-core::before { content:""; position:absolute; inset:0; border-radius:50%; background:repeating-linear-gradient(45deg,rgba(15,60,160,0.85) 0 3px, transparent 3px 11px), repeating-linear-gradient(-45deg,rgba(15,60,160,0.85) 0 3px, transparent 3px 11px); mix-blend-mode:multiply; opacity:.55; pointer-events:none; }
-#custom-cursor .cursor-ring { width:74px; height:74px; margin:-37px 0 0 -37px; border-radius:50%; border:2px solid rgba(255,200,40,0.45); position:absolute; animation:cursorRing 4.5s ease-in-out infinite; box-shadow:0 0 40px -4px rgba(255,180,0,0.45),0 0 0 1px rgba(255,210,80,0.25) inset; backdrop-filter:blur(2px); }
-@keyframes cursorBreath { 0%,100% { transform:scale(1); } 50% { transform:scale(1.14); } }
-@keyframes cursorRing { 0%,100% { transform:scale(1) rotate(0deg); opacity:.8; } 50% { transform:scale(1.25) rotate(180deg); opacity:.55; } }
-/* Trail & ripple with water polo color palette */
-.cursor-trail { position:fixed; width:18px; height:18px; border-radius:50%; pointer-events:none; z-index:300; background:radial-gradient(circle at 30% 30%,rgba(255,220,120,0.85),rgba(255,180,0,0.35) 55%,transparent 75%); mix-blend-mode:plus-lighter; animation:trailFade .6s ease-out forwards; filter:blur(.4px); }
-@keyframes trailFade { to { transform:translateY(10px) scale(.25); opacity:0; } }
-.cursor-ripple { position:fixed; width:120px; height:120px; margin:-60px 0 0 -60px; border-radius:50%; border:2px solid rgba(255,190,0,0.45); box-shadow:0 0 24px -2px rgba(255,190,0,0.5); animation:cursorClick .65s cubic-bezier(.19,1,.22,1) forwards; pointer-events:none; mix-blend-mode:screen; }
-@keyframes cursorClick { 0% { transform:scale(.35); opacity:.95; } 65% { opacity:.45; } 100% { transform:scale(1.45); opacity:0; } }
-
-/* Floating background bubbles */
-.bubble { position:fixed; border-radius:50%; background:radial-gradient(circle at 30% 30%,rgba(160,240,255,0.9),rgba(0,140,255,0.5) 45%,rgba(0,80,170,0.25) 70%,transparent 80%); box-shadow:0 4px 24px -8px rgba(0,140,255,0.6); mix-blend-mode:plus-lighter; pointer-events:none; animation:rise linear forwards; opacity:0.75; }
-@keyframes rise { 0% { transform:translateY(0) scale(.4); opacity:0;} 10% { opacity:.55;} 90% { opacity:.55;} 100% { transform:translateY(-120vh) scale(1); opacity:0;} }
 
 /* Glass morph progressive reveal */
 .card, .research-card, .project-card, .mini-form { position:relative; }
@@ -163,16 +147,7 @@ main { width:100%; }
 /* Motion enhanced parallax on scroll (applied via JS with .parallax) */
 [data-parallax] { will-change:transform; }
 
-/* Cursor interaction states */
-body[data-cursor="hover"] #custom-cursor .cursor-core { transform:scale(1.2); box-shadow:0 0 0 2px rgba(255,255,255,0.55) inset,0 4px 14px -2px rgba(0,0,0,0.45),0 0 34px -4px rgba(255,200,0,0.8); }
-body[data-cursor="hover"] #custom-cursor .cursor-ring { transform:scale(1.15); opacity:.9; }
-body[data-cursor="down"] #custom-cursor .cursor-core { transform:scale(.78); filter:brightness(.95) saturate(1.1); }
-body[data-cursor="down"] #custom-cursor .cursor-ring { transform:scale(.9); opacity:.55; }
-
-/* Low performance mode tweaks */
-body.low-perf #custom-cursor .cursor-ring { display:none; }
-body.low-perf .cursor-trail, body.low-perf .cursor-ripple { display:none; }
-body.low-perf .bubble { animation-duration:90s !important; opacity:.35; }
+/* Removed custom cursor / bubble styles */
 
 /* Small screens */
 @media (max-width:860px){
