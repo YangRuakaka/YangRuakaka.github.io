@@ -21,6 +21,10 @@ body {
   margin:0; font-family:var(--font-sans); color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased; overflow-x:hidden;
 }
 
+/* Custom cursor: water polo ball (fallbacks to auto if unsupported) */
+body { cursor:url('../favicon-ball.svg') 16 16, auto; }
+button, a, .project-card, .research-card, .card { cursor:url('../favicon-ball.svg') 16 16, pointer; }
+
 /* removed enhanced cursor override */
 
 .no-js [data-animate] { opacity:1; transform:none; }
