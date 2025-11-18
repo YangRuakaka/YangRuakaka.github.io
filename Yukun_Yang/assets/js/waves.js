@@ -16,7 +16,7 @@ function resize() {
   ctx.scale(dpr, dpr);
 }
 
-// Wave layers configuration
+// Wave layers configuration - optimized for performance
 const layers = [
   { amp: 38, len: 1.2, speed: 0.18, color: 'rgba(40,160,255,0.12)' },
   { amp: 70, len: 0.8, speed: 0.08, color: 'rgba(0,120,255,0.10)' },
@@ -25,6 +25,7 @@ const layers = [
 ];
 
 let start = performance.now();
+let step = 12; // Cache step value to avoid recalculation
 
 function draw(ts) {
   const t = (ts - start) / 1000;
@@ -34,10 +35,12 @@ function draw(ts) {
     const L = layers[i];
     ctx.beginPath();
     const yBase = height * (0.35 + i * 0.12);
-    const step = Math.max(12, Math.floor(width / 120)); // 自适应步长，宽屏更大
+    const speedMult = t * L.speed;
+    const sinOffsetI = Math.sin(speedMult + i);
+    
     for (let x=0; x<=width; x+= step) {
-      const theta = (x/width) * Math.PI * 2 * L.len + t * L.speed * 4;
-      const y = yBase + Math.sin(theta) * L.amp * Math.sin(t * L.speed + i);
+      const theta = (x/width) * Math.PI * 2 * L.len + speedMult * 4;
+      const y = yBase + Math.sin(theta) * L.amp * sinOffsetI;
       if (x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
     }
     ctx.lineTo(width, height);
