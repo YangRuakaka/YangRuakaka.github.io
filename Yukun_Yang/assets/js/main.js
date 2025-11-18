@@ -27,45 +27,62 @@ if (toggle) {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Magnetic hover logo & tilt cards
+// Magnetic hover logo & tilt cards - 仅在活跃时运行
 function lerp(a,b,t){ return a + (b-a)*t; }
 const mag = document.querySelector('[data-hover-magnet]');
 if (mag) {
-  let rx=0, ry=0, tx=0, ty=0;
+  let rx=0, ry=0, tx=0, ty=0, isActive=false, animationId;
   function loop(){
     tx = lerp(tx, rx, 0.12);
     ty = lerp(ty, ry, 0.12);
     mag.style.transform = `translate(${tx}px,${ty}px)`;
-    requestAnimationFrame(loop);
+    // 当接近目标时停止动画
+    if (Math.abs(tx - rx) < 0.5 && Math.abs(ty - ry) < 0.5) {
+      isActive = false;
+    } else {
+      animationId = requestAnimationFrame(loop);
+    }
   }
-  loop();
   mag.addEventListener('pointermove', e=>{
     const r = mag.getBoundingClientRect();
     rx = (e.clientX - (r.left + r.width/2)) * 0.12;
     ry = (e.clientY - (r.top + r.height/2)) * 0.18;
+    if (!isActive) {
+      isActive = true;
+      loop();
+    }
   });
-  mag.addEventListener('pointerleave', ()=>{ rx=0; ry=0; });
+  mag.addEventListener('pointerleave', ()=>{ 
+    rx=0; ry=0;
+    if (!isActive) {
+      isActive = true;
+      loop();
+    }
+  });
 }
 
-// Simple parallax tilt
+// Simple parallax tilt - 使用 CSS transition 优化性能
 const tiltEls = document.querySelectorAll('[data-tilt]');
 tiltEls.forEach(card=>{
-  let px=0, py=0; let leaveTimeout; 
+  let leaveTimeout; 
   card.addEventListener('pointermove', e=>{
+    clearTimeout(leaveTimeout);
     const r = card.getBoundingClientRect();
     const x = (e.clientX - r.left)/r.width; // 0..1
     const y = (e.clientY - r.top)/r.height;
     const rx = (y - 0.5) * 10; // max tilt
     const ry = (x - 0.5) * -12;
+    card.style.transition = 'none'; // 禁用过渡以实现跟随
     card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
     card.style.boxShadow = '0 28px 46px -18px rgba(0,0,0,0.65),0 0 0 1px rgba(90,210,255,0.35)';
   });
   card.addEventListener('pointerleave', ()=>{
     clearTimeout(leaveTimeout);
+    card.style.transition = '.35s cubic-bezier(.65,.05,.36,1)';
     leaveTimeout = setTimeout(()=>{
       card.style.transform='';
       card.style.boxShadow='';
-    },80);
+    },16);
   });
 });
 

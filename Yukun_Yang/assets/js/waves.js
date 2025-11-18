@@ -34,7 +34,8 @@ function draw(ts) {
     const L = layers[i];
     ctx.beginPath();
     const yBase = height * (0.35 + i * 0.12);
-    for (let x=0; x<=width; x+= 8) {
+    const step = Math.max(12, Math.floor(width / 120)); // 自适应步长，宽屏更大
+    for (let x=0; x<=width; x+= step) {
       const theta = (x/width) * Math.PI * 2 * L.len + t * L.speed * 4;
       const y = yBase + Math.sin(theta) * L.amp * Math.sin(t * L.speed + i);
       if (x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
