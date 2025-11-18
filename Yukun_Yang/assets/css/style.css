@@ -53,16 +53,16 @@ button, a, .project-card, .research-card, .card { cursor:url('../favicon-ball.sv
 .lang-switch button.active, .lang-switch button:hover { color:var(--text); background:rgba(255,255,255,0.14); }
 
 main { width:100%; }
-.hero { min-height:100vh; padding:0 clamp(24px,6vw,140px); position:relative; display:flex; align-items:center; }
+.hero { min-height:85vh; padding:60px clamp(24px,6vw,140px); position:relative; display:flex; align-items:center; }
 .hero-grid { width:100%; display:grid; grid-template-columns:minmax(0,1fr) 360px; align-items:center; gap:60px; }
 @media (max-width:1080px){ .hero-grid { grid-template-columns:1fr; } }
 .hero-inner { max-width:880px; }
-.hero h1 { margin:0 0 28px; font-size: clamp(2.3rem, 5.4vw, 4.3rem); line-height:1.05; font-family:var(--font-display); font-weight:600; letter-spacing: -1px; }
+.hero h1 { margin:0 0 18px; font-size: clamp(2.3rem, 5.4vw, 4.3rem); line-height:1.05; font-family:var(--font-display); font-weight:600; letter-spacing: -1px; }
 .hero h1 .hi { display:block; font-family:var(--font-sans); font-size:clamp(.9rem,1.2rem,1.2rem); font-weight:500; letter-spacing:2px; text-transform:uppercase; opacity:.75; }
 .wave-accent { display:inline-block; animation:float 5s ease-in-out infinite; background:var(--gradient-accent); -webkit-background-clip:text; background-clip:text; color:transparent; }
 .tagline { font-size:clamp(1.1rem,1.6vw,1.45rem); font-weight:400; line-height:1.5; max-width:740px; }
 .sub { font-size:clamp(.95rem,1.3vw,1.1rem); opacity:.78; max-width:680px; }
-.hero-actions { margin-top:40px; display:flex; gap:18px; flex-wrap:wrap; }
+.hero-actions { margin-top:28px; display:flex; gap:18px; flex-wrap:wrap; }
 
 .btn, .btn-pill, .btn-link { --btn-bg:rgba(255,255,255,0.08); position:relative; border:0; cursor:pointer; padding:14px 26px; font:500 14px var(--font-sans); letter-spacing:.5px; border-radius:var(--radius-m); color:var(--text); text-decoration:none; backdrop-filter:blur(8px); background:var(--btn-bg); transition:.5s cubic-bezier(.68,-0.25,.25,1); overflow:hidden; }
 .btn.primary { background:var(--gradient-accent); color:#041824; font-weight:600; }
@@ -83,11 +83,11 @@ main { width:100%; }
 
 .visually-hidden { position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); border:0; }
 
-.panel { padding:120px clamp(28px,5vw,140px) 120px; position:relative; }
-.section-head h2 { margin:0 0 50px; font-size:clamp(1.8rem,3.3vw,2.5rem); font-family:var(--font-display); font-weight:600; letter-spacing:.5px; background:linear-gradient(120deg,var(--accent-alt),#fff); -webkit-background-clip:text; background-clip:text; color:transparent; position:relative; }
+.panel { padding:70px clamp(28px,5vw,140px); position:relative; }
+.section-head h2 { margin:0 0 35px; font-size:clamp(1.8rem,3.3vw,2.5rem); font-family:var(--font-display); font-weight:600; letter-spacing:.5px; background:linear-gradient(120deg,var(--accent-alt),#fff); -webkit-background-clip:text; background-clip:text; color:transparent; position:relative; }
 .section-head h2::after { content:""; position:absolute; left:0; bottom:-12px; height:3px; width:86px; background:var(--gradient-accent); border-radius:4px; box-shadow:0 0 0 4px rgba(59,181,255,0.15); }
 
-.split { display:grid; gap:60px; grid-template-columns: minmax(0,1fr) 340px; align-items:start; }
+.split { display:grid; gap:40px; grid-template-columns: minmax(0,1fr) 340px; align-items:start; }
 @media (max-width:980px){ .split { grid-template-columns:1fr; } }
 
 .info-cards { display:grid; gap:26px; }
@@ -103,7 +103,7 @@ main { width:100%; }
 .tags li:hover::after { opacity:1; }
 .tags.small li { padding:4px 10px; font-size:11px; }
 
-.cards-grid { --min:260px; display:grid; gap:34px; grid-template-columns:repeat(auto-fit,minmax(var(--min),1fr)); }
+.cards-grid { --min:260px; display:grid; gap:24px; grid-template-columns:repeat(auto-fit,minmax(var(--min),1fr)); }
 .research-card { background:linear-gradient(160deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.06); padding:30px 26px 36px; border-radius:30px; position:relative; overflow:hidden; transition:.55s cubic-bezier(.65,.05,.36,1); }
 .research-card h3 { margin:0 0 14px; font-size:19px; letter-spacing:.4px; }
 .research-card:hover { transform:translateY(-6px); box-shadow:0 20px 40px -14px rgba(0,0,0,0.65),0 0 0 1px rgba(90,210,255,0.4); }
