@@ -1,12 +1,14 @@
 // main.js - interactions & micro-animations (optimized for performance)
 
-// Intersection fade / slide in
+// Intersection fade / slide in - 使用被动监听避免阻塞滚动
 const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
+  requestAnimationFrame(()=>{
+    entries.forEach(e=>{
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
   });
 },{ threshold:0.18 });
 
