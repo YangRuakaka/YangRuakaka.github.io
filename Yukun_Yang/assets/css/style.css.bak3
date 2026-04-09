@@ -27,7 +27,7 @@ button, a, .project-card, .research-card, .card { cursor:url('../favicon-ball.sv
 
 /* removed enhanced cursor override */
 
-.no-js [data-animate] { transform-origin: center; transform-origin: center; opacity:1; transform:none; }
+.no-js [data-animate] { transform-origin: center; opacity:1; transform:none; }
 
 /* Background */
 #bg { position:fixed; inset:0; z-index:-2; overflow:hidden; will-change:auto; }
@@ -123,27 +123,27 @@ main { width:100%; }
 .project-card:hover .media img { transform:scale(1.04); }
 
 /* Publications gallery */
-.pub-gallery { display:grid; gap:20px; max-width:1180px; margin:0 auto; }
-.pub-card { position:relative; background:rgba(255,255,255,0.045); border:1px solid rgba(255,255,255,0.065); border-radius:24px; overflow:hidden; padding:22px clamp(18px,2.5vw,32px) 24px; display:grid; gap:20px; grid-template-columns:minmax(0,1fr) 35%; align-items:center; transition:.55s cubic-bezier(.65,.05,.36,1); }
-@media (max-width:1100px){ .pub-card { grid-template-columns:minmax(0,1fr) 38%; } }
-@media (max-width:960px){ .pub-card { grid-template-columns:1fr; padding:20px 20px 24px; } }
+.pub-gallery { display:grid; gap:32px; max-width:1180px; margin:0 auto; }
+.pub-card { position:relative; background:rgba(255,255,255,0.045); border:1px solid rgba(255,255,255,0.065); border-radius:28px; overflow:hidden; padding:26px clamp(18px,3vw,38px) 34px; display:grid; gap:26px; grid-template-columns:minmax(0,1fr) 40%; align-items:center; transition:.55s cubic-bezier(.65,.05,.36,1); }
+@media (max-width:1100px){ .pub-card { grid-template-columns:minmax(0,1fr) 42%; } }
+@media (max-width:960px){ .pub-card { grid-template-columns:1fr; padding:24px 22px 30px; } }
 .pub-card:hover { transform:translateY(-6px); box-shadow:0 20px 46px -16px rgba(0,0,0,0.7),0 0 0 1px rgba(90,210,255,0.34); }
 .pub-card::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 25% 30%,rgba(70,200,255,0.22),transparent 65%); opacity:0; transition:.7s; pointer-events:none; }
 .pub-card:hover::before { opacity:1; }
 
-.pub-badge { position:absolute; top:12px; right:12px; background:var(--gradient-accent); color:#041824; padding:6px 12px; border-radius:18px; font-size:11px; font-weight:600; letter-spacing:.5px; z-index:10; box-shadow:0 4px 12px -2px rgba(59,181,255,0.4); }
+.pub-badge { position:absolute; top:16px; right:16px; background:var(--gradient-accent); color:#041824; padding:6px 14px; border-radius:18px; font-size:11px; font-weight:600; letter-spacing:.5px; z-index:10; box-shadow:0 4px 12px -2px rgba(59,181,255,0.4); }
 
-.pub-award { position:absolute; top:12px; left:12px; background:rgba(255,215,0,0.15); color:#ffd700; padding:6px 12px; border-radius:18px; font-size:11px; font-weight:600; letter-spacing:.5px; z-index:10; border:1px solid rgba(255,215,0,0.3); box-shadow:0 4px 12px -2px rgba(255,215,0,0.25); }
+.pub-award { position:absolute; top:16px; left:16px; background:rgba(255,215,0,0.15); color:#ffd700; padding:6px 14px; border-radius:18px; font-size:11px; font-weight:600; letter-spacing:.5px; z-index:10; border:1px solid rgba(255,215,0,0.3); box-shadow:0 4px 12px -2px rgba(255,215,0,0.25); }
 
-.pub-card .meta h3 { margin:0 0 10px; font-size: clamp(1.1rem,1.8vw,1.45rem); letter-spacing:.3px; }
-.pub-card .meta p { margin:0 0 10px; font-size:13px; line-height:1.45; opacity:.82; }
-.pub-card .meta .tags { gap:6px; }
-.pub-card .figure { position:relative; width:100%; aspect-ratio:16/9; border-radius:18px; overflow:hidden; background:#06344e; box-shadow:0 16px 40px -18px rgba(0,0,0,0.65),0 0 0 1px rgba(255,255,255,0.06); }
+.pub-card .meta h3 { margin:0 0 12px; font-size: clamp(1.15rem,2vw,1.55rem); letter-spacing:.4px; }
+.pub-card .meta p { margin:0 0 12px; font-size:14px; line-height:1.5; opacity:.82; }
+.pub-card .meta .tags { gap:8px; }
+.pub-card .figure { position:relative; width:100%; aspect-ratio:4/3; border-radius:22px; overflow:hidden; background:#06344e; box-shadow:0 16px 40px -18px rgba(0,0,0,0.65),0 0 0 1px rgba(255,255,255,0.06); }
 .pub-card .figure img { width:100%; height:100%; object-fit:cover; display:block; will-change:transform; transition:transform .9s cubic-bezier(.22,.61,.36,1); }
 .pub-card:hover .figure img { transform:scale(1.05); }
 .pub-card .figure::after { content:""; position:absolute; inset:0; background:linear-gradient(115deg,rgba(0,0,0,0.08),transparent 60%); pointer-events:none; }
 
-.pub-link { display:inline-block; margin-top:12px; padding:8px 14px; background:rgba(59,181,255,0.15); color:var(--accent-alt); border:1px solid rgba(59,181,255,0.4); border-radius:16px; font-size:12px; font-weight:600; letter-spacing:.5px; text-decoration:none; transition:.4s cubic-bezier(.65,.05,.36,1); }
+.pub-link { display:inline-block; margin-top:14px; padding:10px 16px; background:rgba(59,181,255,0.15); color:var(--accent-alt); border:1px solid rgba(59,181,255,0.4); border-radius:16px; font-size:12px; font-weight:600; letter-spacing:.5px; text-decoration:none; transition:.4s cubic-bezier(.65,.05,.36,1); }
 .pub-link:hover { background:rgba(59,181,255,0.25); box-shadow:0 4px 12px -2px rgba(59,181,255,0.3); }
 
 .pub-list { list-style:none; margin:0; padding:0; display:grid; gap:18px; }
@@ -188,7 +188,7 @@ main { width:100%; }
 .contact-link:hover { background:linear-gradient(135deg,rgba(59,181,255,0.22),rgba(59,181,255,0.12)); box-shadow:0 10px 28px -6px rgba(59,181,255,0.25); }
 
 /* Interactions */
-[data-animate] { transform-origin: center; transform-origin: center; opacity:0; transform:translateY(20px); animation:fadeInUp .8s cubic-bezier(.16,.84,.44,1) forwards; }
+[data-animate] { transform-origin: center; opacity:0; transform:translateY(20px); animation:fadeInUp .8s cubic-bezier(.16,.84,.44,1) forwards; }
 @keyframes fadeInUp { to { opacity:1; transform:none; } }
 
 /* Keyframes */
@@ -283,7 +283,7 @@ main { width:100%; }
 }
 
 /* Base styles for scroll transitions */
-[data-animate] { transform-origin: center; transform-origin: center;
+[data-animate] { transform-origin: center;
   opacity: 0;
   transform: translateY(30px);
   animation: none; /* override previous animation */
@@ -305,37 +305,61 @@ main { width:100%; }
 }
 
 
-
-
-/* Global Scrollytelling Layer */
-#scrolly-container {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
+/* Floating Decorators for Scrollytelling */
+.floating-deco {
+  position: absolute;
   z-index: -1;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-}
-
-.scroll-deco {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform-origin: center center;
-  position: absolute;
+  pointer-events: none;
+  opacity: 0.15;
+  transition: transform 1.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 1.8s ease;
   will-change: transform, opacity;
-  opacity: 0;
-  max-width: 250px;
-  width: 20vw;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4)) contrast(1.2);
-  /* Enhance readability when overlaid on dark background */
 }
 
-@media (max-width: 768px) {
-  .scroll-deco {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform-origin: center center; max-width: 150px; width: 30vw; }
+.floating-deco img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
+
+/* Base float animation */
+@keyframes floatDeco {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(4deg); }
+}
+@keyframes floatDecoRev {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(15px) rotate(-4deg); }
+}
+
+/* specific decorators */
+.deco-crab {
+  top: 15%; right: 12%; width: 140px;
+  animation: floatDeco 6s ease-in-out infinite;
+  opacity: 0.6; /* More visible on hero */
+}
+.deco-knowledge {
+  bottom: 20%; left: 8%; width: 120px;
+  animation: floatDecoRev 5s ease-in-out infinite;
+  opacity: 0.5; /* More visible on hero */
+}
+
+/* About / Universities */
+.deco-tongji { top: 15%; right: 5%; width: 180px; transform: rotate(10deg); }
+.deco-nd { bottom: 10%; left: 5%; width: 160px; transform: rotate(-10deg); }
+
+/* Publications */
+.deco-paper { top: 5%; left: 2%; width: 150px; transform: rotate(-15deg); }
+.deco-award { bottom: 5%; right: 2%; width: 130px; transform: rotate(15deg); }
+
+/* Misc */
+.deco-waterpolo { top: -10%; left: 5%; width: 140px; transform: rotate(-8deg); }
+.deco-lol { bottom: -10%; right: 5%; width: 150px; transform: rotate(8deg); }
+
+/* When sections appear, give them slightly higher opacity if wanted */
+.visible .floating-deco {
+  opacity: 0.25;
+}
+.visible .deco-crab, .visible .deco-knowledge {
+  opacity: 0.7; 
+}
+
