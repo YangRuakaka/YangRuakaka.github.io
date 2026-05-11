@@ -396,3 +396,47 @@ main { width:100%; }
   }
 }
 
+/* Global Scrollytelling Layer */
+#scrolly-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.scroll-deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: center center;
+  position: absolute;
+  will-change: transform, opacity;
+  opacity: 0;
+  max-width: 250px;
+  width: 20vw;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4)) contrast(1.2);
+}
+
+@media (max-width: 768px) {
+  .scroll-deco {
+    max-width: 150px; width: 30vw;
+  }
+}
+
+/* Base styles for scroll transitions */
+[data-animate] {
+  transform-origin: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: none; /* override previous animation */
+  transition: opacity 1s cubic-bezier(.16,.84,.44,1), transform 1s cubic-bezier(.16,.84,.44,1);
+}
+
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
