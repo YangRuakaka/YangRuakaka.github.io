@@ -127,8 +127,8 @@ main { width:100%; }
 
 /* Publications gallery */
 .pub-gallery { display:grid; gap:24px; max-width:960px; margin:0 auto; }
-.pub-card { position:relative; background:rgba(255,255,255,0.045); border:none; border-radius:24px; overflow:hidden; padding:48px clamp(20px,2vw,28px) 20px; display:grid; gap:16px; grid-template-columns:minmax(0,1fr) minmax(0, 40%); align-items:center; transition:.55s cubic-bezier(.65,.05,.36,1); }
-@media (max-width:1100px){ .pub-card { grid-template-columns:minmax(0,1fr) minmax(0, 45%); } }
+.pub-card { position:relative; background:rgba(255,255,255,0.045); border:none; border-radius:24px; overflow:hidden; padding:48px clamp(20px,2vw,28px) 20px; display:grid; gap:16px; grid-template-columns:minmax(0,1fr) 35%; align-items:center; transition:.55s cubic-bezier(.65,.05,.36,1); }
+@media (max-width:1100px){ .pub-card { grid-template-columns:minmax(0,1fr) 40%; } }
 @media (max-width:960px){ .pub-card { grid-template-columns:1fr; padding:48px 20px 24px; } }
 .pub-card:hover { transform:translateY(-6px); box-shadow:0 4px 12px rgba(0,0,0,0.2); }
 
