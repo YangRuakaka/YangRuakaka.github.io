@@ -272,10 +272,12 @@ main { width:100%; }
     height: 100vh;
     padding-top: 70px; /* Space for fixed header */
     display: grid;
-    grid-template-columns: 45% 1fr;
+    grid-template-columns: 35% 1fr;
     grid-template-rows: auto 1fr;
     gap: 0;
     overflow: hidden;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
   /* Hero Section - Left Column, Full Height */
@@ -331,7 +333,7 @@ main { width:100%; }
   .one-screen-layout #about {
     grid-column: 2;
     grid-row: 1;
-    padding: 30px 40px;
+    padding: 30px 8vw 30px 60px;
     border-bottom: 1px solid rgba(255,255,255,0.06);
     display: flex;
     flex-direction: column;
@@ -367,7 +369,7 @@ main { width:100%; }
   .one-screen-layout #research {
     grid-column: 2;
     grid-row: 2;
-    padding: 30px 40px;
+    padding: 30px 8vw 30px 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
