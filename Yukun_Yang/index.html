@@ -21,19 +21,6 @@
     <div id="bg-overlay"></div>
   </div>
 
-  <!-- Global Scrollytelling Container -->
-  <div id="scrolly-container" aria-hidden="true">
-    <!-- About Section -->
-    <img src="assets/img/decorations/Tongji.svg" class="scroll-deco" data-id="tongji" alt="" />
-    <img src="assets/img/decorations/nd.svg" class="scroll-deco" data-id="nd" alt="" />
-    <img src="assets/img/decorations/Notre_Dame_Fighting_Irish_logo.svg" class="scroll-deco" data-id="nd_irish" alt="" />
-    
-    <!-- Misc Section -->
-    <img src="assets/img/decorations/Water_polo_ball.svg" class="scroll-deco" data-id="waterpolo_ball" alt="" />
-    <img src="assets/img/decorations/Water_polo_pictogram.svg" class="scroll-deco" data-id="waterpolo_pic" alt="" />
-    <img src="assets/img/decorations/lol-icon.svg" class="scroll-deco" data-id="lol_icon" alt="" />
-      </div>
-
   <header class="site-header" data-animate>
     <div class="logo" data-hover-magnet>
       <span class="mark">∿</span>
@@ -43,27 +30,28 @@
       <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation"><span></span></button>
       <ul>
         <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#miscellaneous">Misc</a></li>
+        <li><a href="#places">Places</a></li>
         <li><a href="assets/cv/Yukun_Yang_CV.pdf" class="btn-pill" target="_blank" rel="noopener">CV</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="hero scrolly-scene" id="home" aria-labelledby="hero-title" style="position: relative;">
-      <!-- Hero Floating Elements -->
-      
+    <div class="one-screen-layout">
+    <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="hero-grid">
         <div class="hero-inner" data-animate>
           <h1 id="hero-title">
             <span class="hi">Hi, I'm</span>
             <span class="display">Yukun <span class="wave-accent">∿</span> Yang</span>
           </h1>
-          <p class="tagline">Incoming <strong>CSE PhD Student</strong> at the <strong>University of Notre Dame</strong>.</p>
+          <p class="tagline">Seeking a PhD in <strong>Human–AI Interaction</strong> — focusing on bidirectional alignment.</p>
           <p class="sub">I design human–AI interfaces that help people understand, steer, and co-adapt with advanced AI models. My work examines how human values shape AI behavior — and how AI behavior, in turn, reshapes human understanding.</p>
           <div class="hero-actions">
-            <a href="#publications" class="btn primary">Explore Publications</a>
+            <a href="#research" class="btn primary">Explore Research</a>
           </div>
           <div class="scroll-indicator" aria-hidden="true"><span></span></div>
         </div>
@@ -75,16 +63,14 @@
       </div>
     </section>
 
-    <section id="about" class="panel" data-animate style="position: relative;">
-      <!-- About Floating Elements -->
-      
+    <section id="about" class="panel" data-animate>
       <div class="section-head">
         <h2>About</h2>
       </div>
       <div class="split">
         <div>
           <p>I study how humans and AI systems co-adapt over time, and how interaction design can make this process transparent, value-sensitive, and aligned with real human intentions. My research focuses on enabling users to interpret AI reasoning, articulate their goals more effectively, and shape model behavior through rich, iterative interactions.</p>
-          <p>I am an incoming CSE PhD student at the <strong>University of Notre Dame</strong>, where I will be advised by <a href="https://toby.li" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);">Dr. Toby Li</a>. Previously, I earned my Bachelor's degree in Software Engineering from <strong>Tongji University</strong>. I am eager to combine empirical studies, interface design, and computational analysis to advance bidirectional alignment — ensuring that AI systems collaborate with diverse users in ways that respect their values and context.</p>
+          <p>I am currently seeking a PhD opportunity where I can combine empirical studies, interface design, and computational analysis to advance bidirectional alignment — ensuring that AI systems not only perform tasks, but collaborate with diverse users in ways that respect their values and context.</p>
         </div>
         <aside class="info-cards">
           <div class="card" data-tilt>
@@ -101,9 +87,28 @@
       </div>
     </section>
 
-    <section id="publications" class="panel" data-animate style="position: relative; min-height: auto; padding-top: clamp(60px, 8vh, 90px); padding-bottom: clamp(60px, 8vh, 90px);">
-      <!-- Publications Floating Elements -->
-      
+    <section id="research" class="panel" data-animate>
+      <div class="section-head">
+        <h2>Research Focus</h2>
+      </div>
+      <div class="cards-grid">
+        <article class="research-card" data-tilt>
+          <h3>Bidirectional Alignment</h3>
+          <p>Designing systems that help users interpret, adapt to, and meaningfully engage with AI behavior—while enabling AI models to continuously refine their understanding of user intent.</p>
+        </article>
+        <article class="research-card" data-tilt>
+          <h3>Value-Sensitive Interaction Design</h3>
+          <p>Building interfaces that surface user values and allow people to negotiate, steer, and correct AI decisions in context, ensuring that the system’s behavior aligns with what users care about.</p>
+        </article>
+        <article class="research-card" data-tilt>
+          <h3>Human-Centered AI Evaluation</h3>
+          <p>Developing evaluation frameworks that move beyond task accuracy to capture how AI behavior aligns with human values, expectations, and goals.</p>
+        </article>
+      </div>
+    </section>
+    </div>
+
+    <section id="publications" class="panel" data-animate>
       <div class="section-head">
         <h2>Publications</h2>
       </div>
@@ -136,7 +141,6 @@
               <li>Visualization</li>
               <li>Multi-Agent Systems</li>
             </ul>
-            <a href="https://arxiv.org/abs/2602.05446" class="pub-link" target="_blank" rel="noopener">View Paper →</a>
           </div>
           <figure class="figure">
             <img src="assets/img/DiLLS.png" alt="Interactive Diagnosis of LLM-based Multi-agent Systems" loading="lazy" />
@@ -178,16 +182,14 @@
       </div>
     </section>
 
-    <section id="miscellaneous" class="compact-panel" data-animate style="position: relative; padding: clamp(40px, 6vh, 80px) clamp(28px, 5vw, 140px); min-height: auto;">
-      <!-- Misc Floating Elements -->
-      
+    <section id="miscellaneous" class="panel" data-animate>
       <div class="section-head">
         <h2>Miscellaneous</h2>
       </div>
       <div class="cards-grid">
         <article class="interest-card" data-tilt>
           <figure class="interest-figure">
-            <img src="assets/img/waterpolo.jpg" alt="Water polo sport" loading="lazy" />
+            <img src="assets\img\waterpolo.jpg" alt="Water polo sport" loading="lazy" />
           </figure>
           <div class="card-header">
             <h3>Water polo</h3>
@@ -198,13 +200,98 @@
         </article>
         <article class="interest-card" data-tilt>
           <figure class="interest-figure">
-            <img src="assets/img/LOL.jpg" alt="Video games" loading="lazy" />
+            <img src="assets\img\LOL.jpg" alt="Video games" loading="lazy" />
           </figure>
           <div class="card-header">
             <h3>Video Games</h3>
           </div>
           <div class="card-popup">
             <p>I enjoyed playing games on computer since I was a child.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="places" class="panel" data-animate>
+      <div class="section-head">
+        <h2>Places I've Visited</h2>
+      </div>
+      <div class="places-gallery">
+        <article class="place-card" data-tilt>
+          <figure class="place-figure">
+            <img src="assets\img\Japan2024Feb.jpg" alt="Train station in Kyoto" loading="lazy" />
+          </figure>
+          <div class="card-header">
+            <h3>Kyoto, Japan</h3>
+          </div>
+          <div class="card-popup">
+            <p class="place-description">This is my first trip abroad without my family, which was both exciting and challenging.</p>
+          </div>
+        </article>
+        <article class="place-card" data-tilt>
+          <figure class="place-figure">
+            <img src="assets\img\US2024.jpg" alt="South Bend Baseball Game Day" loading="lazy" />
+          </figure>
+          <div class="card-header">
+            <h3>South Bend, USA</h3>
+          </div>
+          <div class="card-popup">
+            <p class="place-description">My first trip to US, fortunate to get a ticket for a South Bend Baseball Game Day.</p>
+          </div>
+        </article>
+        <article class="place-card" data-tilt>
+          <figure class="place-figure">
+            <img src="assets\img\UAE2025.jpg" alt="Abu Dhabi Palace" loading="lazy" />
+          </figure>
+          <div class="card-header">
+            <h3>Abu Dhabi, UAE</h3>
+          </div>
+          <div class="card-popup">
+            <p class="place-description">Fortunate to get a fully funded opportunity to visit Abu Dhabi, experiencing its rich culture and modern marvels.</p>
+          </div>
+        </article>
+        <article class="place-card" data-tilt>
+          <figure class="place-figure">
+            <img src="assets\img\Japan2025April.jpg" alt="Tokyo tower" loading="lazy" />
+          </figure>
+          <div class="card-header">
+            <h3>Tokyo, Japan</h3>
+          </div>
+          <div class="card-popup">
+            <p class="place-description">Attended CHI 2025 at Yokohama, Japan. This photo was taken when I did a small sightseeing trip in Tokyo.</p>
+          </div>
+        </article>
+        <article class="place-card" data-tilt>
+          <figure class="place-figure">
+            <img src="assets\img\US2025.jpg" alt="Chicago millennium park" loading="lazy" />
+          </figure>
+          <div class="card-header">
+            <h3>Chicago, USA</h3>
+          </div>
+          <div class="card-popup">
+            <p class="place-description">Second trip to the US, exploring the vibrant city of Chicago and its iconic Millennium Park.</p>
+          </div>
+        </article>
+        <article class="place-card" data-tilt>
+          <figure class="place-figure">
+            <img src="assets/img/Busan.jpg" alt="Busan, South Korea" loading="lazy" />
+          </figure>
+          <div class="card-header">
+            <h3>Busan, South Korea</h3>
+          </div>
+          <div class="card-popup">
+            <p class="place-description">Attended UIST 2025 at Busan, enjoying its beautiful beaches and vibrant culture.</p>
+          </div>
+        </article>
+        <article class="place-card" data-tilt>
+          <figure class="place-figure">
+            <img src="assets\img\Japan2025Nov.jpg" alt="Kyoto, Japan" loading="lazy" />
+          </figure>
+          <div class="card-header">
+            <h3>Kyoto, Japan</h3>
+          </div>
+          <div class="card-popup">
+            <p class="place-description">First time to take my family abroad, exploring the historic and cultural sites of Kyoto. Grandparents and Mom joined me on this memorable trip.</p>
           </div>
         </article>
       </div>
@@ -233,7 +320,7 @@
   </footer>
 
   <script>document.documentElement.classList.remove('no-js');</script>
-  <script src="assets/js/waves.js" ></script>
-  <script src="assets/js/main.js" ></script>
+  <script src="assets/js/waves.js" type="module"></script>
+  <script src="assets/js/main.js" type="module"></script>
 </body>
 </html>
