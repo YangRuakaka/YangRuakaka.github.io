@@ -76,7 +76,10 @@ main { width:100%; }
 .scroll-indicator span { width:6px; height:6px; background:var(--gradient-accent); border-radius:50%; animation:scrollDot 2.4s ease-in-out infinite; }
 
 /* Avatar */
-.hero-avatar { position:relative; width:260px; max-width:100%; aspect-ratio:1/1.15; margin:0; justify-self:center; }
+.hero-avatar { position:relative; width:340px; max-width:100%; aspect-ratio:1/1.15; margin:0; justify-self:center; }
+.social-actions { display:flex; gap:16px; justify-content:center; align-items:center; }
+.social-icon { color:var(--text-dim); transition:.3s; display:inline-flex; padding: 10px; border-radius: 50%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); }
+.social-icon:hover { color:var(--text); transform:translateY(-3px) scale(1.05); background: rgba(59,181,255,0.1); border-color: rgba(59,181,255,0.3); box-shadow:0 8px 20px -6px rgba(0,180,255,0.3); }
 .hero-avatar img { width:100%; height:100%; object-fit:cover; border-radius:34px; position:relative; z-index:2; box-shadow:0 28px 48px -18px rgba(0,0,0,0.7),0 0 0 1px rgba(90,210,255,0.25); backdrop-filter:blur(4px); will-change:auto; }
 .avatar-glow { position:absolute; inset:-6%; background:radial-gradient(circle at 30% 25%,rgba(80,200,255,0.35),rgba(0,90,180,0.2) 40%,transparent 70%); filter:blur(40px) saturate(1.4); opacity:.85; animation:avatarPulse 8s ease-in-out infinite; border-radius:40px; z-index:1; }
 .hero-avatar::after { content:""; position:absolute; inset:0; border:1px solid rgba(255,255,255,0.12); border-radius:34px; pointer-events:none; mix-blend-mode:overlay; }
@@ -299,8 +302,8 @@ main { width:100%; }
   
   .one-screen-layout .hero-avatar {
     order: 1;
-    width: 180px; /* Smaller avatar */
-    margin-bottom: 10px;
+    width: 250px; /* Scaled up avatar */
+    margin-bottom: 20px;
   }
 
   .one-screen-layout .hero h1 {
@@ -342,7 +345,7 @@ main { width:100%; }
 
   .one-screen-layout #about .split {
     gap: 20px;
-    grid-template-columns: 1fr 240px; /* Smaller interests card */
+    grid-template-columns: 1fr;
   }
   
   .one-screen-layout #about p {
