@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yangruakaka.github.io/resume_personal_website/sitemap.xml
